@@ -1,0 +1,5 @@
+<library path="mover_stroke_converter">
+  <class name="seed_converter/Mover"  type="seed_converter::Mover" base_class_type="seed_converter::StrokeConverter">
+    <description>Mover stroke converter plugin.</description>
+  </class>
+</library>

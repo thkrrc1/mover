@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="SEED-Mover" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:arg name="driver_settings" default="$(find mover)/config/driver_settings.yaml" />
+    <xacro:arg name="parts_dir" default="$(find mover)/model/parts" />
+
+    <xacro:include filename="$(arg parts_dir)/typeg_mover/typeg_mover.xacro" />
+    
+    <xacro:property name="robot_root" value="base_link" />
+    <xacro:property name="mover_top_link" value="mover_top_link" />
+
+    <xacro:typeg-mover
+       base_link="${robot_root}"
+       top_link="${mover_top_link}"/>
+   
+
+    <xacro:include filename="$(find mover)/model/mover.ros2_control.xacro" />
+    <xacro:mover_ros2_control name="mover" driver_settings="$(arg driver_settings)" />
+</robot>
