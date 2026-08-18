@@ -73,6 +73,7 @@ private:
           "ros2", "run",
           "laser_filters", "scan_to_scan_filter_chain",
           "--ros-args",
+          "--remap", "__node:=front_laser_filter",
           "--params-file", lidar_param_path_,
           "--remap", "/scan:=/scan_raw",
           "--remap", "/scan_filtered:=/scan"
